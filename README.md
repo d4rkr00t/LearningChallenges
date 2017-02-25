@@ -1,0 +1,14 @@
+Set of learning challenges.
+
+### Statuses for challenges:
+
+* ![proposed](https://img.shields.io/badge/status-proposed-blue.svg?style=flat-square)
+* ![in progress](https://img.shields.io/badge/status-in_progress-yellow.svg?style=flat-square)
+* ![completed](https://img.shields.io/badge/status-completed-green.svg?style=flat-square)
+
+### Challenges
+
+#### 1. Programming Languages 30 Days Challenge
+![proposed](https://img.shields.io/badge/status-proposed-blue.svg?style=flat-square)
+
+[Issue #1](https://github.com/d4rkr00t/LearningChallenges/issues/1)

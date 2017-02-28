@@ -17,16 +17,16 @@ class ColourGroupsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let grBgColors = [UIColor.red, UIColor.blue]
-        let gradientLoc: [NSNumber] = [0.0, 1.0]
-        let grLayer = CAGradientLayer()
-        grLayer.colors = grBgColors
-        grLayer.locations = gradientLoc
-        
-        grLayer.frame = tableView.bounds
-        let bgView = UIView(frame: tableView.bounds)
-        bgView.layer.insertSublayer(grLayer, at: 0)
-        tableView.backgroundView = bgView
+//        let grBgColors = [UIColor.red, UIColor.blue]
+//        let gradientLoc: [NSNumber] = [0.0, 1.0]
+//        let grLayer = CAGradientLayer()
+//        grLayer.colors = grBgColors
+//        grLayer.locations = gradientLoc
+//        
+//        grLayer.frame = tableView.bounds
+//        let bgView = UIView(frame: tableView.bounds)
+//        bgView.layer.insertSublayer(grLayer, at: 0)
+//        tableView.backgroundView = bgView
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

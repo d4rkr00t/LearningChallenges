@@ -16,6 +16,7 @@
 		942BAA111E65601700F8DD8D /* ColourGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BAA101E65601700F8DD8D /* ColourGroupsListTableViewController.swift */; };
 		942BAA131E65647300F8DD8D /* MaterialColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BAA121E65647300F8DD8D /* MaterialColours.swift */; };
 		942BAA151E65800500F8DD8D /* SingleColourPaletteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BAA141E65800500F8DD8D /* SingleColourPaletteTableViewController.swift */; };
+		946115581E6624D300584031 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946115571E6624D300584031 /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		942BAA101E65601700F8DD8D /* ColourGroupsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourGroupsListTableViewController.swift; sourceTree = "<group>"; };
 		942BAA121E65647300F8DD8D /* MaterialColours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColours.swift; sourceTree = "<group>"; };
 		942BAA141E65800500F8DD8D /* SingleColourPaletteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleColourPaletteTableViewController.swift; sourceTree = "<group>"; };
+		946115571E6624D300584031 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				942BA9E21E655F0900F8DD8D /* AppDelegate.swift */,
 				942BAA121E65647300F8DD8D /* MaterialColours.swift */,
+				946115571E6624D300584031 /* UIColorExtension.swift */,
 				942BA9E61E655F0900F8DD8D /* Main.storyboard */,
 				942BAA141E65800500F8DD8D /* SingleColourPaletteTableViewController.swift */,
 				942BAA101E65601700F8DD8D /* ColourGroupsListTableViewController.swift */,
@@ -270,6 +273,7 @@
 			files = (
 				942BA9E31E655F0900F8DD8D /* AppDelegate.swift in Sources */,
 				942BAA131E65647300F8DD8D /* MaterialColours.swift in Sources */,
+				946115581E6624D300584031 /* UIColorExtension.swift in Sources */,
 				942BAA111E65601700F8DD8D /* ColourGroupsListTableViewController.swift in Sources */,
 				942BAA151E65800500F8DD8D /* SingleColourPaletteTableViewController.swift in Sources */,
 			);
@@ -520,6 +524,7 @@
 				942BAA091E655F0900F8DD8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		942BAA0A1E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPaletteTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +533,7 @@
 				942BAA0C1E655F0900F8DD8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		942BAA0D1E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPaletteUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +542,7 @@
 				942BAA0F1E655F0900F8DD8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

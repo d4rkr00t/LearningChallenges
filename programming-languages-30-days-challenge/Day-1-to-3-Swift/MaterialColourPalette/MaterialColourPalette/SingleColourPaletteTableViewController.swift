@@ -46,7 +46,17 @@ class SingleColourPaletteTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCellColour", for: indexPath)
-        cell.backgroundColor = colours[indexPath.row]
+        let colour = colours[indexPath.row]
+        cell.backgroundColor = colour
+        cell.detailTextLabel?.text = colour.toHexString().uppercased()
+        cell.textLabel?.text = getColourIndex(indexPath.row)
+        
+        if indexPath.row < 3 {
+            cell.detailTextLabel?.textColor = UIColor.darkText
+        } else {
+            cell.detailTextLabel?.textColor = UIColor.white
+        }
+        
         return cell
     }
 }

@@ -7,66 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9477E19A1E64CC5D005AD26C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477E1991E64CC5D005AD26C /* AppDelegate.swift */; };
-		9477E19F1E64CC5D005AD26C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9477E19D1E64CC5D005AD26C /* Main.storyboard */; };
-		9477E1A11E64CC5D005AD26C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9477E1A01E64CC5D005AD26C /* Assets.xcassets */; };
-		9477E1A41E64CC5D005AD26C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9477E1A21E64CC5D005AD26C /* LaunchScreen.storyboard */; };
-		9477E1AF1E64CC5D005AD26C /* MaterialColourPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477E1AE1E64CC5D005AD26C /* MaterialColourPaletteTests.swift */; };
-		9477E1BA1E64CC5E005AD26C /* MaterialColourPaletteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477E1B91E64CC5E005AD26C /* MaterialColourPaletteUITests.swift */; };
-		9477E1C81E64CFAB005AD26C /* ColourGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477E1C71E64CFAB005AD26C /* ColourGroupsListTableViewController.swift */; };
-		9477E1CA1E64D710005AD26C /* ColourGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477E1C91E64D710005AD26C /* ColourGroupTableViewCell.swift */; };
+		942BA9E31E655F0900F8DD8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BA9E21E655F0900F8DD8D /* AppDelegate.swift */; };
+		942BA9E81E655F0900F8DD8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942BA9E61E655F0900F8DD8D /* Main.storyboard */; };
+		942BA9EA1E655F0900F8DD8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 942BA9E91E655F0900F8DD8D /* Assets.xcassets */; };
+		942BA9ED1E655F0900F8DD8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 942BA9EB1E655F0900F8DD8D /* LaunchScreen.storyboard */; };
+		942BA9F81E655F0900F8DD8D /* MaterialColourPaletteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BA9F71E655F0900F8DD8D /* MaterialColourPaletteTests.swift */; };
+		942BAA031E655F0900F8DD8D /* MaterialColourPaletteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BAA021E655F0900F8DD8D /* MaterialColourPaletteUITests.swift */; };
+		942BAA111E65601700F8DD8D /* ColourGroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BAA101E65601700F8DD8D /* ColourGroupsListTableViewController.swift */; };
+		942BAA131E65647300F8DD8D /* MaterialColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BAA121E65647300F8DD8D /* MaterialColours.swift */; };
+		942BAA151E65800500F8DD8D /* SingleColourPaletteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BAA141E65800500F8DD8D /* SingleColourPaletteTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9477E1AB1E64CC5D005AD26C /* PBXContainerItemProxy */ = {
+		942BA9F41E655F0900F8DD8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9477E18E1E64CC5D005AD26C /* Project object */;
+			containerPortal = 942BA9D71E655F0900F8DD8D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9477E1951E64CC5D005AD26C;
+			remoteGlobalIDString = 942BA9DE1E655F0900F8DD8D;
 			remoteInfo = MaterialColourPalette;
 		};
-		9477E1B61E64CC5D005AD26C /* PBXContainerItemProxy */ = {
+		942BA9FF1E655F0900F8DD8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9477E18E1E64CC5D005AD26C /* Project object */;
+			containerPortal = 942BA9D71E655F0900F8DD8D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9477E1951E64CC5D005AD26C;
+			remoteGlobalIDString = 942BA9DE1E655F0900F8DD8D;
 			remoteInfo = MaterialColourPalette;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9477E1961E64CC5D005AD26C /* MaterialColourPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaterialColourPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9477E1991E64CC5D005AD26C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9477E19E1E64CC5D005AD26C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9477E1A01E64CC5D005AD26C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9477E1A31E64CC5D005AD26C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9477E1A51E64CC5D005AD26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9477E1AA1E64CC5D005AD26C /* MaterialColourPaletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaterialColourPaletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9477E1AE1E64CC5D005AD26C /* MaterialColourPaletteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialColourPaletteTests.swift; sourceTree = "<group>"; };
-		9477E1B01E64CC5D005AD26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9477E1B51E64CC5D005AD26C /* MaterialColourPaletteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaterialColourPaletteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9477E1B91E64CC5E005AD26C /* MaterialColourPaletteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialColourPaletteUITests.swift; sourceTree = "<group>"; };
-		9477E1BB1E64CC5E005AD26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9477E1C71E64CFAB005AD26C /* ColourGroupsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourGroupsListTableViewController.swift; sourceTree = "<group>"; };
-		9477E1C91E64D710005AD26C /* ColourGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourGroupTableViewCell.swift; sourceTree = "<group>"; };
+		942BA9DF1E655F0900F8DD8D /* MaterialColourPalette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaterialColourPalette.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		942BA9E21E655F0900F8DD8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		942BA9E71E655F0900F8DD8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		942BA9E91E655F0900F8DD8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		942BA9EC1E655F0900F8DD8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		942BA9EE1E655F0900F8DD8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942BA9F31E655F0900F8DD8D /* MaterialColourPaletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaterialColourPaletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		942BA9F71E655F0900F8DD8D /* MaterialColourPaletteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialColourPaletteTests.swift; sourceTree = "<group>"; };
+		942BA9F91E655F0900F8DD8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942BA9FE1E655F0900F8DD8D /* MaterialColourPaletteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaterialColourPaletteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		942BAA021E655F0900F8DD8D /* MaterialColourPaletteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialColourPaletteUITests.swift; sourceTree = "<group>"; };
+		942BAA041E655F0900F8DD8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		942BAA101E65601700F8DD8D /* ColourGroupsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourGroupsListTableViewController.swift; sourceTree = "<group>"; };
+		942BAA121E65647300F8DD8D /* MaterialColours.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColours.swift; sourceTree = "<group>"; };
+		942BAA141E65800500F8DD8D /* SingleColourPaletteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleColourPaletteTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9477E1931E64CC5D005AD26C /* Frameworks */ = {
+		942BA9DC1E655F0900F8DD8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9477E1A71E64CC5D005AD26C /* Frameworks */ = {
+		942BA9F01E655F0900F8DD8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9477E1B21E64CC5D005AD26C /* Frameworks */ = {
+		942BA9FB1E655F0900F8DD8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,54 +78,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9477E18D1E64CC5D005AD26C = {
+		942BA9D61E655F0900F8DD8D = {
 			isa = PBXGroup;
 			children = (
-				9477E1981E64CC5D005AD26C /* MaterialColourPalette */,
-				9477E1AD1E64CC5D005AD26C /* MaterialColourPaletteTests */,
-				9477E1B81E64CC5E005AD26C /* MaterialColourPaletteUITests */,
-				9477E1971E64CC5D005AD26C /* Products */,
+				942BA9E11E655F0900F8DD8D /* MaterialColourPalette */,
+				942BA9F61E655F0900F8DD8D /* MaterialColourPaletteTests */,
+				942BAA011E655F0900F8DD8D /* MaterialColourPaletteUITests */,
+				942BA9E01E655F0900F8DD8D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9477E1971E64CC5D005AD26C /* Products */ = {
+		942BA9E01E655F0900F8DD8D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9477E1961E64CC5D005AD26C /* MaterialColourPalette.app */,
-				9477E1AA1E64CC5D005AD26C /* MaterialColourPaletteTests.xctest */,
-				9477E1B51E64CC5D005AD26C /* MaterialColourPaletteUITests.xctest */,
+				942BA9DF1E655F0900F8DD8D /* MaterialColourPalette.app */,
+				942BA9F31E655F0900F8DD8D /* MaterialColourPaletteTests.xctest */,
+				942BA9FE1E655F0900F8DD8D /* MaterialColourPaletteUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9477E1981E64CC5D005AD26C /* MaterialColourPalette */ = {
+		942BA9E11E655F0900F8DD8D /* MaterialColourPalette */ = {
 			isa = PBXGroup;
 			children = (
-				9477E1991E64CC5D005AD26C /* AppDelegate.swift */,
-				9477E1C71E64CFAB005AD26C /* ColourGroupsListTableViewController.swift */,
-				9477E19D1E64CC5D005AD26C /* Main.storyboard */,
-				9477E1C91E64D710005AD26C /* ColourGroupTableViewCell.swift */,
-				9477E1A01E64CC5D005AD26C /* Assets.xcassets */,
-				9477E1A21E64CC5D005AD26C /* LaunchScreen.storyboard */,
-				9477E1A51E64CC5D005AD26C /* Info.plist */,
+				942BA9E21E655F0900F8DD8D /* AppDelegate.swift */,
+				942BAA121E65647300F8DD8D /* MaterialColours.swift */,
+				942BA9E61E655F0900F8DD8D /* Main.storyboard */,
+				942BAA141E65800500F8DD8D /* SingleColourPaletteTableViewController.swift */,
+				942BAA101E65601700F8DD8D /* ColourGroupsListTableViewController.swift */,
+				942BA9E91E655F0900F8DD8D /* Assets.xcassets */,
+				942BA9EB1E655F0900F8DD8D /* LaunchScreen.storyboard */,
+				942BA9EE1E655F0900F8DD8D /* Info.plist */,
 			);
 			path = MaterialColourPalette;
 			sourceTree = "<group>";
 		};
-		9477E1AD1E64CC5D005AD26C /* MaterialColourPaletteTests */ = {
+		942BA9F61E655F0900F8DD8D /* MaterialColourPaletteTests */ = {
 			isa = PBXGroup;
 			children = (
-				9477E1AE1E64CC5D005AD26C /* MaterialColourPaletteTests.swift */,
-				9477E1B01E64CC5D005AD26C /* Info.plist */,
+				942BA9F71E655F0900F8DD8D /* MaterialColourPaletteTests.swift */,
+				942BA9F91E655F0900F8DD8D /* Info.plist */,
 			);
 			path = MaterialColourPaletteTests;
 			sourceTree = "<group>";
 		};
-		9477E1B81E64CC5E005AD26C /* MaterialColourPaletteUITests */ = {
+		942BAA011E655F0900F8DD8D /* MaterialColourPaletteUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9477E1B91E64CC5E005AD26C /* MaterialColourPaletteUITests.swift */,
-				9477E1BB1E64CC5E005AD26C /* Info.plist */,
+				942BAA021E655F0900F8DD8D /* MaterialColourPaletteUITests.swift */,
+				942BAA041E655F0900F8DD8D /* Info.plist */,
 			);
 			path = MaterialColourPaletteUITests;
 			sourceTree = "<group>";
@@ -131,13 +134,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9477E1951E64CC5D005AD26C /* MaterialColourPalette */ = {
+		942BA9DE1E655F0900F8DD8D /* MaterialColourPalette */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9477E1BE1E64CC5E005AD26C /* Build configuration list for PBXNativeTarget "MaterialColourPalette" */;
+			buildConfigurationList = 942BAA071E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPalette" */;
 			buildPhases = (
-				9477E1921E64CC5D005AD26C /* Sources */,
-				9477E1931E64CC5D005AD26C /* Frameworks */,
-				9477E1941E64CC5D005AD26C /* Resources */,
+				942BA9DB1E655F0900F8DD8D /* Sources */,
+				942BA9DC1E655F0900F8DD8D /* Frameworks */,
+				942BA9DD1E655F0900F8DD8D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -145,72 +148,75 @@
 			);
 			name = MaterialColourPalette;
 			productName = MaterialColourPalette;
-			productReference = 9477E1961E64CC5D005AD26C /* MaterialColourPalette.app */;
+			productReference = 942BA9DF1E655F0900F8DD8D /* MaterialColourPalette.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9477E1A91E64CC5D005AD26C /* MaterialColourPaletteTests */ = {
+		942BA9F21E655F0900F8DD8D /* MaterialColourPaletteTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9477E1C11E64CC5E005AD26C /* Build configuration list for PBXNativeTarget "MaterialColourPaletteTests" */;
+			buildConfigurationList = 942BAA0A1E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPaletteTests" */;
 			buildPhases = (
-				9477E1A61E64CC5D005AD26C /* Sources */,
-				9477E1A71E64CC5D005AD26C /* Frameworks */,
-				9477E1A81E64CC5D005AD26C /* Resources */,
+				942BA9EF1E655F0900F8DD8D /* Sources */,
+				942BA9F01E655F0900F8DD8D /* Frameworks */,
+				942BA9F11E655F0900F8DD8D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9477E1AC1E64CC5D005AD26C /* PBXTargetDependency */,
+				942BA9F51E655F0900F8DD8D /* PBXTargetDependency */,
 			);
 			name = MaterialColourPaletteTests;
 			productName = MaterialColourPaletteTests;
-			productReference = 9477E1AA1E64CC5D005AD26C /* MaterialColourPaletteTests.xctest */;
+			productReference = 942BA9F31E655F0900F8DD8D /* MaterialColourPaletteTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9477E1B41E64CC5D005AD26C /* MaterialColourPaletteUITests */ = {
+		942BA9FD1E655F0900F8DD8D /* MaterialColourPaletteUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9477E1C41E64CC5E005AD26C /* Build configuration list for PBXNativeTarget "MaterialColourPaletteUITests" */;
+			buildConfigurationList = 942BAA0D1E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPaletteUITests" */;
 			buildPhases = (
-				9477E1B11E64CC5D005AD26C /* Sources */,
-				9477E1B21E64CC5D005AD26C /* Frameworks */,
-				9477E1B31E64CC5D005AD26C /* Resources */,
+				942BA9FA1E655F0900F8DD8D /* Sources */,
+				942BA9FB1E655F0900F8DD8D /* Frameworks */,
+				942BA9FC1E655F0900F8DD8D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9477E1B71E64CC5D005AD26C /* PBXTargetDependency */,
+				942BAA001E655F0900F8DD8D /* PBXTargetDependency */,
 			);
 			name = MaterialColourPaletteUITests;
 			productName = MaterialColourPaletteUITests;
-			productReference = 9477E1B51E64CC5D005AD26C /* MaterialColourPaletteUITests.xctest */;
+			productReference = 942BA9FE1E655F0900F8DD8D /* MaterialColourPaletteUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9477E18E1E64CC5D005AD26C /* Project object */ = {
+		942BA9D71E655F0900F8DD8D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Stanislav Sysoev";
 				TargetAttributes = {
-					9477E1951E64CC5D005AD26C = {
+					942BA9DE1E655F0900F8DD8D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LAM2E72NZF;
 						ProvisioningStyle = Automatic;
 					};
-					9477E1A91E64CC5D005AD26C = {
+					942BA9F21E655F0900F8DD8D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LAM2E72NZF;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 9477E1951E64CC5D005AD26C;
+						TestTargetID = 942BA9DE1E655F0900F8DD8D;
 					};
-					9477E1B41E64CC5D005AD26C = {
+					942BA9FD1E655F0900F8DD8D = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LAM2E72NZF;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 9477E1951E64CC5D005AD26C;
+						TestTargetID = 942BA9DE1E655F0900F8DD8D;
 					};
 				};
 			};
-			buildConfigurationList = 9477E1911E64CC5D005AD26C /* Build configuration list for PBXProject "MaterialColourPalette" */;
+			buildConfigurationList = 942BA9DA1E655F0900F8DD8D /* Build configuration list for PBXProject "MaterialColourPalette" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -218,37 +224,37 @@
 				en,
 				Base,
 			);
-			mainGroup = 9477E18D1E64CC5D005AD26C;
-			productRefGroup = 9477E1971E64CC5D005AD26C /* Products */;
+			mainGroup = 942BA9D61E655F0900F8DD8D;
+			productRefGroup = 942BA9E01E655F0900F8DD8D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9477E1951E64CC5D005AD26C /* MaterialColourPalette */,
-				9477E1A91E64CC5D005AD26C /* MaterialColourPaletteTests */,
-				9477E1B41E64CC5D005AD26C /* MaterialColourPaletteUITests */,
+				942BA9DE1E655F0900F8DD8D /* MaterialColourPalette */,
+				942BA9F21E655F0900F8DD8D /* MaterialColourPaletteTests */,
+				942BA9FD1E655F0900F8DD8D /* MaterialColourPaletteUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9477E1941E64CC5D005AD26C /* Resources */ = {
+		942BA9DD1E655F0900F8DD8D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9477E1A41E64CC5D005AD26C /* LaunchScreen.storyboard in Resources */,
-				9477E1A11E64CC5D005AD26C /* Assets.xcassets in Resources */,
-				9477E19F1E64CC5D005AD26C /* Main.storyboard in Resources */,
+				942BA9ED1E655F0900F8DD8D /* LaunchScreen.storyboard in Resources */,
+				942BA9EA1E655F0900F8DD8D /* Assets.xcassets in Resources */,
+				942BA9E81E655F0900F8DD8D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9477E1A81E64CC5D005AD26C /* Resources */ = {
+		942BA9F11E655F0900F8DD8D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9477E1B31E64CC5D005AD26C /* Resources */ = {
+		942BA9FC1E655F0900F8DD8D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -258,60 +264,61 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9477E1921E64CC5D005AD26C /* Sources */ = {
+		942BA9DB1E655F0900F8DD8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9477E19A1E64CC5D005AD26C /* AppDelegate.swift in Sources */,
-				9477E1CA1E64D710005AD26C /* ColourGroupTableViewCell.swift in Sources */,
-				9477E1C81E64CFAB005AD26C /* ColourGroupsListTableViewController.swift in Sources */,
+				942BA9E31E655F0900F8DD8D /* AppDelegate.swift in Sources */,
+				942BAA131E65647300F8DD8D /* MaterialColours.swift in Sources */,
+				942BAA111E65601700F8DD8D /* ColourGroupsListTableViewController.swift in Sources */,
+				942BAA151E65800500F8DD8D /* SingleColourPaletteTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9477E1A61E64CC5D005AD26C /* Sources */ = {
+		942BA9EF1E655F0900F8DD8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9477E1AF1E64CC5D005AD26C /* MaterialColourPaletteTests.swift in Sources */,
+				942BA9F81E655F0900F8DD8D /* MaterialColourPaletteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9477E1B11E64CC5D005AD26C /* Sources */ = {
+		942BA9FA1E655F0900F8DD8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9477E1BA1E64CC5E005AD26C /* MaterialColourPaletteUITests.swift in Sources */,
+				942BAA031E655F0900F8DD8D /* MaterialColourPaletteUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9477E1AC1E64CC5D005AD26C /* PBXTargetDependency */ = {
+		942BA9F51E655F0900F8DD8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9477E1951E64CC5D005AD26C /* MaterialColourPalette */;
-			targetProxy = 9477E1AB1E64CC5D005AD26C /* PBXContainerItemProxy */;
+			target = 942BA9DE1E655F0900F8DD8D /* MaterialColourPalette */;
+			targetProxy = 942BA9F41E655F0900F8DD8D /* PBXContainerItemProxy */;
 		};
-		9477E1B71E64CC5D005AD26C /* PBXTargetDependency */ = {
+		942BAA001E655F0900F8DD8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9477E1951E64CC5D005AD26C /* MaterialColourPalette */;
-			targetProxy = 9477E1B61E64CC5D005AD26C /* PBXContainerItemProxy */;
+			target = 942BA9DE1E655F0900F8DD8D /* MaterialColourPalette */;
+			targetProxy = 942BA9FF1E655F0900F8DD8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9477E19D1E64CC5D005AD26C /* Main.storyboard */ = {
+		942BA9E61E655F0900F8DD8D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9477E19E1E64CC5D005AD26C /* Base */,
+				942BA9E71E655F0900F8DD8D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		9477E1A21E64CC5D005AD26C /* LaunchScreen.storyboard */ = {
+		942BA9EB1E655F0900F8DD8D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9477E1A31E64CC5D005AD26C /* Base */,
+				942BA9EC1E655F0900F8DD8D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -319,7 +326,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9477E1BC1E64CC5E005AD26C /* Debug */ = {
+		942BAA051E655F0900F8DD8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -368,7 +375,7 @@
 			};
 			name = Debug;
 		};
-		9477E1BD1E64CC5E005AD26C /* Release */ = {
+		942BAA061E655F0900F8DD8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -410,10 +417,11 @@
 			};
 			name = Release;
 		};
-		9477E1BF1E64CC5E005AD26C /* Debug */ = {
+		942BAA081E655F0900F8DD8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LAM2E72NZF;
 				INFOPLIST_FILE = MaterialColourPalette/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.sysoev.MaterialColourPalette;
@@ -422,10 +430,11 @@
 			};
 			name = Debug;
 		};
-		9477E1C01E64CC5E005AD26C /* Release */ = {
+		942BAA091E655F0900F8DD8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LAM2E72NZF;
 				INFOPLIST_FILE = MaterialColourPalette/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.sysoev.MaterialColourPalette;
@@ -434,11 +443,12 @@
 			};
 			name = Release;
 		};
-		9477E1C21E64CC5E005AD26C /* Debug */ = {
+		942BAA0B1E655F0900F8DD8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LAM2E72NZF;
 				INFOPLIST_FILE = MaterialColourPaletteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.sysoev.MaterialColourPaletteTests;
@@ -448,11 +458,12 @@
 			};
 			name = Debug;
 		};
-		9477E1C31E64CC5E005AD26C /* Release */ = {
+		942BAA0C1E655F0900F8DD8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LAM2E72NZF;
 				INFOPLIST_FILE = MaterialColourPaletteTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.sysoev.MaterialColourPaletteTests;
@@ -462,10 +473,11 @@
 			};
 			name = Release;
 		};
-		9477E1C51E64CC5E005AD26C /* Debug */ = {
+		942BAA0E1E655F0900F8DD8D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = LAM2E72NZF;
 				INFOPLIST_FILE = MaterialColourPaletteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.sysoev.MaterialColourPaletteUITests;
@@ -475,10 +487,11 @@
 			};
 			name = Debug;
 		};
-		9477E1C61E64CC5E005AD26C /* Release */ = {
+		942BAA0F1E655F0900F8DD8D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = LAM2E72NZF;
 				INFOPLIST_FILE = MaterialColourPaletteUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.sysoev.MaterialColourPaletteUITests;
@@ -491,40 +504,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9477E1911E64CC5D005AD26C /* Build configuration list for PBXProject "MaterialColourPalette" */ = {
+		942BA9DA1E655F0900F8DD8D /* Build configuration list for PBXProject "MaterialColourPalette" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9477E1BC1E64CC5E005AD26C /* Debug */,
-				9477E1BD1E64CC5E005AD26C /* Release */,
+				942BAA051E655F0900F8DD8D /* Debug */,
+				942BAA061E655F0900F8DD8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9477E1BE1E64CC5E005AD26C /* Build configuration list for PBXNativeTarget "MaterialColourPalette" */ = {
+		942BAA071E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPalette" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9477E1BF1E64CC5E005AD26C /* Debug */,
-				9477E1C01E64CC5E005AD26C /* Release */,
+				942BAA081E655F0900F8DD8D /* Debug */,
+				942BAA091E655F0900F8DD8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		9477E1C11E64CC5E005AD26C /* Build configuration list for PBXNativeTarget "MaterialColourPaletteTests" */ = {
+		942BAA0A1E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPaletteTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9477E1C21E64CC5E005AD26C /* Debug */,
-				9477E1C31E64CC5E005AD26C /* Release */,
+				942BAA0B1E655F0900F8DD8D /* Debug */,
+				942BAA0C1E655F0900F8DD8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		9477E1C41E64CC5E005AD26C /* Build configuration list for PBXNativeTarget "MaterialColourPaletteUITests" */ = {
+		942BAA0D1E655F0900F8DD8D /* Build configuration list for PBXNativeTarget "MaterialColourPaletteUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9477E1C51E64CC5E005AD26C /* Debug */,
-				9477E1C61E64CC5E005AD26C /* Release */,
+				942BAA0E1E655F0900F8DD8D /* Debug */,
+				942BAA0F1E655F0900F8DD8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9477E18E1E64CC5D005AD26C /* Project object */;
+	rootObject = 942BA9D71E655F0900F8DD8D /* Project object */;
 }

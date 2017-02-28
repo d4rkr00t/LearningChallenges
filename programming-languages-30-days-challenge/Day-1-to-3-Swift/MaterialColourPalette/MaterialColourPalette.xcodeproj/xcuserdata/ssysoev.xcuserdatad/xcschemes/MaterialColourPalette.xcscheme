@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9477E1951E64CC5D005AD26C"
+               BlueprintIdentifier = "942BA9DE1E655F0900F8DD8D"
                BuildableName = "MaterialColourPalette.app"
                BlueprintName = "MaterialColourPalette"
                ReferencedContainer = "container:MaterialColourPalette.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9477E1A91E64CC5D005AD26C"
+               BlueprintIdentifier = "942BA9F21E655F0900F8DD8D"
                BuildableName = "MaterialColourPaletteTests.xctest"
                BlueprintName = "MaterialColourPaletteTests"
                ReferencedContainer = "container:MaterialColourPalette.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9477E1B41E64CC5D005AD26C"
+               BlueprintIdentifier = "942BA9FD1E655F0900F8DD8D"
                BuildableName = "MaterialColourPaletteUITests.xctest"
                BlueprintName = "MaterialColourPaletteUITests"
                ReferencedContainer = "container:MaterialColourPalette.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9477E1951E64CC5D005AD26C"
+            BlueprintIdentifier = "942BA9DE1E655F0900F8DD8D"
             BuildableName = "MaterialColourPalette.app"
             BlueprintName = "MaterialColourPalette"
             ReferencedContainer = "container:MaterialColourPalette.xcodeproj">
@@ -75,7 +75,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9477E1951E64CC5D005AD26C"
+            BlueprintIdentifier = "942BA9DE1E655F0900F8DD8D"
             BuildableName = "MaterialColourPalette.app"
             BlueprintName = "MaterialColourPalette"
             ReferencedContainer = "container:MaterialColourPalette.xcodeproj">
@@ -94,7 +94,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9477E1951E64CC5D005AD26C"
+            BlueprintIdentifier = "942BA9DE1E655F0900F8DD8D"
             BuildableName = "MaterialColourPalette.app"
             BlueprintName = "MaterialColourPalette"
             ReferencedContainer = "container:MaterialColourPalette.xcodeproj">

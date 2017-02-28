@@ -9,23 +9,24 @@
 import UIKit
 
 class ColourGroupsListTableViewController: UITableViewController {
-    
-    let colourGroups: [String] = [
-        "red",
-        "pink",
-        "purple",
-        "deep_purple"
-    ]
-    
-    let coloursForGroups: [[CGFloat]] = [
-        [244.0, 67.0, 54.0],
-        [233.0, 30.0, 99.0],
-        [156.0, 39.0, 176.0],
-        [103.0, 58.0, 183.0]
-    ]
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        super.viewWillAppear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let grBgColors = [UIColor.red, UIColor.blue]
+        let gradientLoc: [NSNumber] = [0.0, 1.0]
+        let grLayer = CAGradientLayer()
+        grLayer.colors = grBgColors
+        grLayer.locations = gradientLoc
+        
+        grLayer.frame = tableView.bounds
+        let bgView = UIView(frame: tableView.bounds)
+        bgView.layer.insertSublayer(grLayer, at: 0)
+        tableView.backgroundView = bgView
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,32 +44,33 @@ class ColourGroupsListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return colourGroups.count
+        return getMaterialColourGroups().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ColourCell", for: indexPath)
-        let rgb: [CGFloat] = coloursForGroups[indexPath.row]
-        cell.backgroundColor = UIColor(red: rgb[0], green: rgb[1], blue: rgb[2], alpha: 1.0)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
         
-        print(rgb)
-
+        let colourName = MaterialColours(rawValue: indexPath.row)
+        let colours = getMaterialColourGroups()[colourName!]
+        cell.backgroundColor = colours?[materialColoursMainIndex]
+        
         return cell
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        let colourName = MaterialColours(rawValue: tableView.indexPathForSelectedRow!.row)
+        let colours = getMaterialColourGroups()[colourName!]
+        
+        if let destination = segue.destination as? SingleColourPaletteTableViewController {
+            destination.colours = colours!
+        }
     }
-    */
-
 }

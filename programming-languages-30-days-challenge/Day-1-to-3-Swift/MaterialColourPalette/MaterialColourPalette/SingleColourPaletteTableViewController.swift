@@ -11,10 +11,15 @@ import UIKit
 class SingleColourPaletteTableViewController: UITableViewController {
     
     var colours: [UIColor] = []
+    var colourGroup: MaterialColours = MaterialColours.red
+    
+    var atTop: Bool = true
+    var atBottom: Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
+        tableView.backgroundColor = colours[0]
     }
 
     override func viewDidLoad() {
@@ -30,6 +35,24 @@ class SingleColourPaletteTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 70 * 2 {
+            if !atTop {
+                print("set top bg");
+                atTop = true
+                atBottom = false
+                tableView.backgroundColor = colours[0]
+            }
+        } else {
+            if !atBottom {
+                print("set bottom bg");
+                atTop = false
+                atBottom = true
+                tableView.backgroundColor = colours.last
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -51,9 +74,11 @@ class SingleColourPaletteTableViewController: UITableViewController {
         cell.detailTextLabel?.text = colour.toHexString().uppercased()
         cell.textLabel?.text = getColourIndex(indexPath.row)
         
-        if indexPath.row < 3 {
+        if materialLabelColours[colourGroup]![indexPath.row] == 0 {
+            cell.textLabel?.textColor = UIColor.darkText
             cell.detailTextLabel?.textColor = UIColor.darkText
         } else {
+            cell.textLabel?.textColor = UIColor.white
             cell.detailTextLabel?.textColor = UIColor.white
         }
         

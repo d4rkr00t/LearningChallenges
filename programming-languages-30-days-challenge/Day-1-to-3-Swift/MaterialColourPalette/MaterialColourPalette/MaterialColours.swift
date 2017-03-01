@@ -339,6 +339,28 @@ let materialColoursRaw: [MaterialColours: [[CGFloat]]] = [
     ],
 ]
 
+let materialLabelColours = [
+    MaterialColours.red: [0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1,],
+    MaterialColours.pink: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1,],
+    MaterialColours.purple: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1,],
+    MaterialColours.deep_purple: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1,],
+    MaterialColours.indigo: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1,],
+    MaterialColours.blue: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1,],
+    MaterialColours.light_blue: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1,],
+    MaterialColours.cyan: [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0,],
+    MaterialColours.teal: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0,],
+    MaterialColours.green: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0,],
+    MaterialColours.light_green: [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0,],
+    MaterialColours.lime: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,],
+    MaterialColours.yellow: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    MaterialColours.amber: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    MaterialColours.orange: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+    MaterialColours.deep_orange: [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1,],
+    MaterialColours.brown: [0, 0, 0, 1, 1, 1, 1, 1, 1, 1,],
+    MaterialColours.grey: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1,],
+    MaterialColours.blue_grey: [0, 0, 0, 0, 1, 1, 1, 1, 1, 1,],
+]
+
 let materialColoursMainIndex = 6
 
 var materialColours: [MaterialColours: [UIColor]] = [:]
@@ -358,4 +380,16 @@ func getMaterialColourGroups() -> [MaterialColours: [UIColor]] {
 let materialColourIndexes: [String] = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "A100", "A200", "A400", "A700"]
 func getColourIndex(_ index: Int) -> String {
     return materialColourIndexes[index]
+}
+
+func getFirstGroupMainColour() -> UIColor {
+    let colours = getMaterialColourGroups()
+    let colourName = MaterialColours(rawValue: 0)
+    return colours[colourName!]![materialColoursMainIndex]
+}
+
+func getLastGroupMainColour() -> UIColor {
+    let colours = getMaterialColourGroups()
+    let colourName = MaterialColours(rawValue: colours.count - 1)
+    return colours[colourName!]![materialColoursMainIndex]
 }

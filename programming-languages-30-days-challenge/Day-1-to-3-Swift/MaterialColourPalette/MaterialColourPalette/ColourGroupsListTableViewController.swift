@@ -9,35 +9,45 @@
 import UIKit
 
 class ColourGroupsListTableViewController: UITableViewController {
+    var atTop: Bool = true
+    var atBottom: Bool = false
+    var backgroundSet: Bool = false
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
         super.viewWillAppear(animated)
+
+        if !backgroundSet {
+            tableView.backgroundColor = getFirstGroupMainColour()
+            backgroundSet = true
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let grBgColors = [UIColor.red, UIColor.blue]
-//        let gradientLoc: [NSNumber] = [0.0, 1.0]
-//        let grLayer = CAGradientLayer()
-//        grLayer.colors = grBgColors
-//        grLayer.locations = gradientLoc
-//        
-//        grLayer.frame = tableView.bounds
-//        let bgView = UIView(frame: tableView.bounds)
-//        bgView.layer.insertSublayer(grLayer, at: 0)
-//        tableView.backgroundView = bgView
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < 70 * 2 {
+            if !atTop {
+                print("set top bg");
+                atTop = true
+                atBottom = false
+                tableView.backgroundColor = getFirstGroupMainColour()
+            }
+        } else {
+            if !atBottom {
+                print("set bottom bg");
+                atTop = false
+                atBottom = true
+                tableView.backgroundColor = getLastGroupMainColour()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -71,6 +81,7 @@ class ColourGroupsListTableViewController: UITableViewController {
         
         if let destination = segue.destination as? SingleColourPaletteTableViewController {
             destination.colours = colours!
+            destination.colourGroup = colourName!
         }
     }
 }

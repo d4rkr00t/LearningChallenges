@@ -1,0 +1,7 @@
+[package]
+name = "akpc"
+version = "0.1.0"
+authors = ["Stanislav Sysoev <d4rkr00t@gmail.com>"]
+
+[dependencies]
+rustc-serialize = "0.3.22"

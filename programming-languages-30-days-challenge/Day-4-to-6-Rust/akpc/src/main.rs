@@ -22,7 +22,7 @@ fn get_package_name() -> String {
 }
 
 fn get_package_json(package_name: &String) -> Json {
-    let path = Path::new("packages").join(&package_name).join("package__.json");
+    let path = Path::new("packages").join(&package_name).join("package.json");
     let mut data = String::new();
     match File::open(path.into_os_string()) {
         Ok(mut file) => {
@@ -33,6 +33,23 @@ fn get_package_json(package_name: &String) -> Json {
     }
 }
 
+fn get_deps_to_bootstrap(package_json: &Json) -> Vec<String> {
+    match package_json.find_path(&["dependencies"]) {
+        Some(deps) => {
+            let mut dependencies = vec![];
+
+            println!("{}", deps.keys());
+
+            // for d in deps {
+            //     dependencies.push(d);
+            // }
+
+            return dependencies;
+        },
+        None => return vec![],
+    }
+}
+
 fn main() {
     let package_name: String = get_package_name();
 
@@ -40,9 +57,7 @@ fn main() {
         panic!("Package name is requried!");
     }
 
-    println!("{:?}", env::current_dir());
-
     let package_json: Json = get_package_json(&package_name);
+    let deps_to_bootstrap = get_deps_to_bootstrap(&package_json);
 
-    println!("{}", package_json.is_null());
 }

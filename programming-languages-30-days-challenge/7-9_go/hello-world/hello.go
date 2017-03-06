@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"math/cmplx"
+	"runtime"
 )
 
 func add(x, y int) int {
@@ -36,16 +37,35 @@ func pow(x, n, lim float64) float64 {
 	return lim
 }
 
-func Sqrt(x float64) float64 {
-	z := 10.0
-	for i := 0; i < 10; i++ {
-		z = z - (((z * z) - x) / 2 * z)
-		fmt.Println(z)
+func _Sqrt(x float64) float64 {
+	z := 1.0
+	z0 := z * 2
+	for i := 0; math.Abs(z-z0) > 0.1; i++ {
+		fmt.Println("start", z, z0, math.Abs(z-z0))
+		z0 = z
+		z = z - ((z*z - x) / (2 * z))
 	}
 	return z
 }
 
+func printOS() {
+	fmt.Println("")
+	fmt.Println("Go runs on: ")
+
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("OS X")
+	case "linux":
+		fmt.Println("Linux")
+	default:
+		fmt.Printf("%s.", os)
+	}
+}
+
 func main() {
+	defer fmt.Println("============================================")
+	defer fmt.Println("")
+
 	var i, j int = 1, 2
 	k := 10
 	fmt.Println(add(8, 29))
@@ -87,7 +107,8 @@ func main() {
 	)
 
 	fmt.Println()
-	fmt.Println("z=")
-	fmt.Println(Sqrt(16.0))
-	fmt.Println(math.Sqrt(16.0))
+	fmt.Println(_Sqrt(612.0))
+	fmt.Println(math.Sqrt(612.0))
+
+	printOS()
 }

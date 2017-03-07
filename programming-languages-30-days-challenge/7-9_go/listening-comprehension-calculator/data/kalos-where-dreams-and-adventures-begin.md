@@ -12,5 +12,3 @@ The Kalos region, like the other regions, a beautiful place where people and poc
 Yeah, we'll be on the ground soon.
 Ashe, You and Pickachu must be really excited
 We're starting a brand new adventure, there's nothing more exciting for a pockemon trainer.
-
-99%

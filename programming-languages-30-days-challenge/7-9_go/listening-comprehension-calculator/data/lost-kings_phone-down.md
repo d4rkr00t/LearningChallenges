@@ -38,5 +38,3 @@ Why don't you put that fucking phone down
 Darling, so we |could| be alone now
 Can't you just be here when the lights go out
 Just put that phone down
-
-87%

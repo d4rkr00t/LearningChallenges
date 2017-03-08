@@ -85,19 +85,32 @@ func getFilesInfo(dir string, files []string) []FileInfo {
 	return result
 }
 
+func formatFileName(name string, length int) string {
+	return strings.Repeat(" ", length-len(name)) + name + ":"
+}
+
 func main() {
 	dir := "./data"
 	files := getFilesInfo(dir, getFiles(dir))
+	length := 0
 	avg, min, max, percentile, worstFile, bestFile := buildMetrics(files, 80.0)
 
+	for _, file := range files {
+		if len(file.name) > length {
+			length = len(file.name)
+		}
+	}
+
+	magenta := color.New(color.FgHiMagenta)
 	red := color.New(color.FgRed).SprintFunc()
 	redBg := color.New(color.FgBlack).Add(color.BgRed).SprintFunc()
 	yellow := color.New(color.FgYellow).SprintFunc()
-	// yellowBg := color.New(color.FgBlack).Add(color.BgYellow).SprintFunc()
+	yellowBg := color.New(color.FgBlack).Add(color.BgYellow).SprintFunc()
 	green := color.New(color.FgGreen).SprintFunc()
 	greenBg := color.New(color.FgBlack).Add(color.BgGreen).SprintFunc()
 
 	fmt.Println()
+	magenta.Printf("General stats: \n\n")
 	fmt.Printf("         Worst:  %s\n", red(worstFile))
 	fmt.Printf("     Min score:  %s\n", redBg(min))
 	fmt.Println()
@@ -106,4 +119,9 @@ func main() {
 	fmt.Println()
 	fmt.Printf("     Avg score:  %s\n", yellow(avg))
 	fmt.Printf("%s percentile:  %s\n", yellow("80%"), yellow(percentile))
+	fmt.Printf("\n\n")
+	magenta.Printf("Stats by file: \n\n")
+	for _, file := range files {
+		fmt.Printf("%s  %s\n", formatFileName(file.name, length), yellowBg(file.score))
+	}
 }

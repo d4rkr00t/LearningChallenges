@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica Neue, Calibri Light, Roboto, sans-serif;
+    font-size: 16px;
+
+    padding: 0;
+
+    color: #455a64;
+    background: #eceff1;
+}
+
+.title {
+    font-size: .8rem;
+
+    padding: 1rem 0;
+
+    text-align: center;
+}
+
+.card {
+    font-size: .9em;
+
+    position: relative;
+
+    margin: 1rem 1rem;
+    padding: 1rem;
+
+    border-radius: .3rem;
+    background: #fff;
+    box-shadow: 0 .8rem 3rem #cfd8dc;
+}
+
+.card:before {
+    position: absolute;
+    z-index: -1;
+    top: -.8rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    content: '';
+    transform: scale(.9);
+
+    opacity: .45;
+    border-radius: .3rem;
+    background: #fff;
+    box-shadow: 0 .8rem 3rem #cfd8dc;
+
+    filter: blur(.6px);
+}
+
+.card__completed {
+    text-align: right;
+}
+
+.card__group {
+    padding: 2rem 0;
+}
+
+.card__badge {
+    font-size: .7rem;
+
+    display: inline-block;
+
+    padding: .2rem .4rem;
+
+    color: rgba(255, 255, 255, .8);
+    border-radius: .3rem;
+    background: #5e35b1;
+}
+
+.card__label {
+    font-size: .7rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(69, 90, 100, .6);
+}
+
+.card__row {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.card__col {
+    flex-grow: 1;
+    text-align: center;
+    color: #455a64;
+}

@@ -1,6 +1,7 @@
 module Main exposing (..)
 
-import Html exposing (Html, div, text, button)
+import Html exposing (Html, div, span, text, button)
+import Html.Attributes exposing (..)
 
 
 main =
@@ -76,6 +77,15 @@ update msg model =
 -- VIEW
 
 
+exercise_column : String -> Html Msg
+exercise_column exr =
+  div
+    [ class "card__col" ]
+    [ div [ class "card__col-icon" ] [ text "1" ]
+    , div [ class "card__col-label" ] [ text exr ]
+    ]
+
+
 main_view : Model -> Html Msg
 main_view model =
   let
@@ -84,14 +94,28 @@ main_view model =
 
     other =
       toString (model.powerups * 2)
+
+    next_training =
+      [ pull_ups, other, other, other ]
   in
     div
       []
-      [ div [] [ text ("Today is " ++ (toString model.day) ++ " day") ]
-      , div [] [ text "Next traning plan is: " ]
+      [ div
+          [ class "title" ]
+          [ text "100 Days Workout" ]
       , div
-          []
-          [ text (pull_ups ++ "-" ++ other ++ "-" ++ other ++ "-" ++ other)
+          [ class "card" ]
+          [ div
+              [ class "card__completed" ]
+              [ span [ class "card__badge" ] [ text ("✓ " ++ (toString model.day)) ]
+              ]
+          , div
+              [ class "card__group" ]
+              [ div [ class "card__label" ] [ text "Next traning: " ]
+              , div
+                  [ class "card__row" ]
+                  (List.map exercise_column next_training)
+              ]
           ]
       , button [] [ text "Start Training" ]
       ]

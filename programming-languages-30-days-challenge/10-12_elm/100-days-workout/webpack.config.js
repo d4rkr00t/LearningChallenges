@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/static/index.js",
@@ -44,6 +45,8 @@ module.exports = {
       template: "src/static/index.html",
       inject: "body",
       filename: "index.html"
-    })
+    }),
+
+    new CopyWebpackPlugin([{ from: "assets/" }])
   ]
 };

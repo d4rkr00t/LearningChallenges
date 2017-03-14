@@ -77,12 +77,24 @@ update msg model =
 -- VIEW
 
 
-exercise_column : String -> Html Msg
+type alias Exercise =
+  { name : String
+  , iterations : Int
+  }
+
+
+exercise_column : Exercise -> Html Msg
 exercise_column exr =
   div
     [ class "card__col" ]
-    [ div [ class "card__col-icon" ] [ text "1" ]
-    , div [ class "card__col-label" ] [ text exr ]
+    [ div
+        [ classList
+            [ ( "card__col-icon", True )
+            , ( exr.name, True )
+            ]
+        ]
+        []
+    , div [ class "card__col-label" ] [ text (toString exr.iterations) ]
     ]
 
 
@@ -90,13 +102,17 @@ main_view : Model -> Html Msg
 main_view model =
   let
     pull_ups =
-      toString model.powerups
+      model.powerups
 
     other =
-      toString (model.powerups * 2)
+      model.powerups * 2
 
     next_training =
-      [ pull_ups, other, other, other ]
+      [ (Exercise "pull_ups" pull_ups)
+      , (Exercise "squats" other)
+      , (Exercise "push_ups" other)
+      , (Exercise "squats" other)
+      ]
   in
     div
       []
@@ -107,7 +123,9 @@ main_view model =
           [ class "card" ]
           [ div
               [ class "card__completed" ]
-              [ span [ class "card__badge" ] [ text ("✓ " ++ (toString model.day)) ]
+              [ span
+                  [ classList [ ( "card__badge", True ), ( "-purple", True ) ] ]
+                  [ text ("✓ " ++ (toString model.day)) ]
               ]
           , div
               [ class "card__group" ]
@@ -115,6 +133,13 @@ main_view model =
               , div
                   [ class "card__row" ]
                   (List.map exercise_column next_training)
+              ]
+          , div
+              []
+              [ span
+                  [ classList [ ( "card__badge", True ), ( "-green", True ) ] ]
+                  [ text ("∞ " ++ (toString model.loops))
+                  ]
               ]
           ]
       , button [] [ text "Start Training" ]

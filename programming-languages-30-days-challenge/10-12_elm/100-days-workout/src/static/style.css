@@ -59,7 +59,7 @@ body {
 }
 
 .card__group {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
 }
 
 .card__badge {
@@ -71,7 +71,14 @@ body {
 
     color: rgba(255, 255, 255, .8);
     border-radius: .3rem;
+}
+
+.card__badge.-purple {
     background: #5e35b1;
+}
+
+.card__badge.-green {
+    background: #2E7D32;
 }
 
 .card__label {
@@ -90,4 +97,28 @@ body {
     flex-grow: 1;
     text-align: center;
     color: #455a64;
+}
+
+.card__col-icon {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background-position: 50% 50%;
+}
+
+.card__col-icon.pull_ups {
+    background-image: url(/assets/pull_ups.svg);
+}
+
+.card__col-icon.push_ups {
+    background-image: url(/assets/push_ups.svg);
+}
+
+.card__col-icon.squats {
+    background-image: url(/assets/squats.svg);
+}
+
+.card__col-label {
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }

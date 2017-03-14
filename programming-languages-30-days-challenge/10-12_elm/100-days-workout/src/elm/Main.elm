@@ -98,6 +98,13 @@ exercise_column exr =
     ]
 
 
+badge : String -> String -> String -> Html Msg
+badge icon val color_cls =
+  span
+    [ classList [ ( "card__badge", True ), ( color_cls, True ) ] ]
+    [ text (icon ++ " " ++ val) ]
+
+
 main_view : Model -> Html Msg
 main_view model =
   let
@@ -123,10 +130,7 @@ main_view model =
           [ class "card" ]
           [ div
               [ class "card__completed" ]
-              [ span
-                  [ classList [ ( "card__badge", True ), ( "-purple", True ) ] ]
-                  [ text ("✓ " ++ (toString model.day)) ]
-              ]
+              [ badge "✓" (toString model.day) "-purple" ]
           , div
               [ class "card__group" ]
               [ div [ class "card__label" ] [ text "Next traning: " ]
@@ -136,11 +140,7 @@ main_view model =
               ]
           , div
               []
-              [ span
-                  [ classList [ ( "card__badge", True ), ( "-green", True ) ] ]
-                  [ text ("∞ " ++ (toString model.loops))
-                  ]
-              ]
+              [ badge "∞" (toString model.loops) "-green" ]
           ]
       , button [] [ text "Start Training" ]
       ]

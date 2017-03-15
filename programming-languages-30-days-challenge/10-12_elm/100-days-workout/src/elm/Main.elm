@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Html exposing (Html, div, span, text, button)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 
 
 main =
@@ -142,10 +143,84 @@ main_view model =
               []
               [ badge "∞" (toString model.loops) "-green" ]
           ]
-      , button [] [ text "Start Training" ]
+      , div
+          [ class "button-wrapper", onClick StartTraining ]
+          [ button [ class "button" ] [ text "Start Training" ] ]
       ]
+
+
+traning_buttons : Int -> Int -> Html Msg
+traning_buttons current_loop total_loops =
+  if current_loop == total_loops then
+    div
+      [ class "button-wrapper", onClick EndTraining ]
+      [ button [ class "button" ] [ text "Finish Training" ] ]
+  else
+    div
+      [ class "button-wrapper", onClick NextLoop ]
+      [ button [ class "button" ] [ text "Next Loop" ] ]
+
+
+training_view : Model -> Html Msg
+training_view model =
+  let
+    pull_ups =
+      model.powerups
+
+    other =
+      model.powerups * 2
+
+    next_training =
+      [ (Exercise "pull_ups" pull_ups)
+      , (Exercise "squats" other)
+      , (Exercise "push_ups" other)
+      , (Exercise "squats" other)
+      ]
+  in
+    div
+      []
+      [ div
+          [ class "title" ]
+          [ text "Training" ]
+      , div
+          [ class "card" ]
+          [ div
+              [ class "card__completed" ]
+              [ badge "✓" (toString model.day) "-purple" ]
+          , div
+              [ class "card__group" ]
+              [ div [ class "card__label" ] [ text "Current traning: " ]
+              , div
+                  [ class "card__row" ]
+                  (List.map exercise_column next_training)
+              ]
+          , div
+              [ class "card__group" ]
+              [ div [ class "card__label" ] [ text "Current loop: " ]
+              , div
+                  [ class "card__hero" ]
+                  [ text (toString model.currentLoop) ]
+              ]
+          ]
+      , traning_buttons model.currentLoop model.loops
+      ]
+
+
+after_training_view : Model -> Html Msg
+after_training_view model =
+  div
+    []
+    [ div
+        [ class "title" ]
+        [ text "After Training" ]
+    ]
 
 
 view : Model -> Html Msg
 view model =
-  main_view model
+  if model.isTrainingStarted then
+    training_view model
+  else if model.isAfterTrainingStarted then
+    after_training_view model
+  else
+    main_view model

@@ -25,7 +25,7 @@ body {
 
     position: relative;
 
-    margin: 0.8rem 1rem 1rem;
+    margin: 0.5rem 1rem 1rem;
     padding: 1rem;
 
     border-radius: .3rem;
@@ -36,7 +36,7 @@ body {
 .card:before {
     position: absolute;
     z-index: -1;
-    top: -.8rem;
+    top: -1.2rem;
     right: 0;
     bottom: 0;
     left: 0;
@@ -121,4 +121,34 @@ body {
 .card__col-label {
     font-size: 1rem;
     margin-top: 0.5rem;
+}
+
+.card__hero {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 1.8rem;
+}
+
+.button-wrapper {
+    margin: 2rem 1rem 1rem;
+}
+
+.button {
+    background: #2E7D32;
+    border: none;
+    border-radius: .3rem;
+    box-shadow: 0 .8rem 3rem #cfd8dc;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.button:active {
+    opacity: .9;
+}
+
+.button:focus {
+    outline: none;
 }

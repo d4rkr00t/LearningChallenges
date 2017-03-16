@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -15,12 +16,24 @@ module.exports = {
 
   devtool: "cheap-eval-source-map",
 
+  devServer: {
+    hot: true
+  },
+
   module: {
     rules: [
       {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
-        use: "elm-webpack-loader"
+        use: [
+          "elm-hot-loader",
+          {
+            loader: "elm-webpack-loader",
+            options: {
+              debug: true
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
@@ -46,6 +59,12 @@ module.exports = {
       inject: "body",
       filename: "index.html"
     }),
+
+    new webpack.HotModuleReplacementPlugin(),
+    // enable HMR globally
+
+    new webpack.NamedModulesPlugin(),
+    // prints more readable module names in the browser console on HMR updates
 
     new CopyWebpackPlugin([{ from: "assets/" }])
   ]

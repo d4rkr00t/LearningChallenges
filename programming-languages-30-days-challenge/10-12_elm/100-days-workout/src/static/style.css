@@ -25,7 +25,7 @@ body {
 
     position: relative;
 
-    margin: 0.5rem 1rem 1rem;
+    margin: .5rem 1rem 1rem;
     padding: 1rem;
 
     border-radius: .3rem;
@@ -78,31 +78,38 @@ body {
 }
 
 .card__badge.-green {
-    background: #2E7D32;
+    background: #2e7d32;
 }
 
 .card__label {
     font-size: .7rem;
-    text-transform: uppercase;
     font-weight: 500;
+
+    text-transform: uppercase;
+
     color: rgba(69, 90, 100, .6);
 }
 
 .card__row {
     display: flex;
+
     margin-top: 1rem;
 }
 
 .card__col {
-    flex-grow: 1;
     text-align: center;
+
     color: #455a64;
+
+    flex-grow: 1;
 }
 
 .card__col-icon {
     display: inline-block;
+
     width: 38px;
     height: 38px;
+
     background-position: 50% 50%;
 }
 
@@ -120,29 +127,64 @@ body {
 
 .card__col-label {
     font-size: 1rem;
-    margin-top: 0.5rem;
+
+    margin-top: .5rem;
 }
 
 .card__hero {
-    text-align: center;
     font-size: 3rem;
+
     margin-top: 1.8rem;
+
+    text-align: center;
 }
+
+.card__text {
+    margin: 1em 0 0 0;
+    padding: 0;
+}
+
+.button-group {
+    display: flex;
+
+    margin: 2rem 1rem 1rem;
+}
+
 
 .button-wrapper {
     margin: 2rem 1rem 1rem;
 }
 
+.button-group .button-wrapper {
+    margin: 0;
+
+    flex-grow: 1;
+}
+
+.button-group .button-wrapper + .button-wrapper {
+    margin-left: 1em;
+}
+
 .button {
-    background: #2E7D32;
+    font-size: .8rem;
+
+    display: block;
+
+    width: 100%;
+    padding: 1rem;
+
+    color: #fff;
     border: none;
     border-radius: .3rem;
     box-shadow: 0 .8rem 3rem #cfd8dc;
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    color: #fff;
-    font-size: .8rem;
+}
+
+.button.-green {
+    background: #2e7d32;
+}
+
+.button.-red {
+    background: #d32f2f;
 }
 
 .button:active {

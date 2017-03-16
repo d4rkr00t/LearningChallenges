@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build:clean": "rm -rf dist",
+    "build:webpack": "NODE_ENV=production webpack -p",
+    "build": "npm run build:clean && npm run build:webpack"
   },
   "keywords": [],
   "author": "Stanislav Sysoev <@d4rkr00t>",

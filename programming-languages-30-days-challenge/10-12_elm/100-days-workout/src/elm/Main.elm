@@ -1,4 +1,4 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import Html exposing (Html, div, span, text, button, p)
 import Html.Attributes exposing (..)
@@ -6,7 +6,7 @@ import Html.Events exposing (onClick)
 
 
 main =
-  Html.program
+  Html.programWithFlags
     { init = init
     , update = update
     , view = view
@@ -37,21 +37,34 @@ type alias Model =
   }
 
 
-init : ( Model, Cmd Msg )
-init =
-  let
-    model =
-      { day = 1
-      , powerups = 1
-      , loops = 4
-      , currentLoop = 0
-      , isTrainingStarted = False
-      , isAfterTrainingStarted = False
-      , afterTrainingQuiz =
-          { wasSuccessful = False, wasSuccessfulAnswered = False, wasEasy = False, wasEasyAnswered = False }
-      }
-  in
-    ( model, Cmd.none )
+init : Maybe Model -> ( Model, Cmd Msg )
+init model =
+  case model of
+    Just model ->
+      ( model, Cmd.none )
+
+    Nothing ->
+      ( default_model, Cmd.none )
+
+
+default_model : Model
+default_model =
+  { day = 1
+  , powerups = 1
+  , loops = 4
+  , currentLoop = 0
+  , isTrainingStarted = False
+  , isAfterTrainingStarted = False
+  , afterTrainingQuiz =
+      { wasSuccessful = False, wasSuccessfulAnswered = False, wasEasy = False, wasEasyAnswered = False }
+  }
+
+
+
+-- PORTS
+
+
+port setStorage : Model -> Cmd msg
 
 
 
@@ -68,7 +81,8 @@ type Msg
   | TrainingWasUnsuccessful
   | TrainingWasEasy
   | TrainingWasDificult
-  | TrainingQuizComplete
+  | DayCompleted
+  | SaveModel
 
 
 power_up : Model -> ( Model, Cmd Msg )
@@ -77,7 +91,7 @@ power_up model =
     new_model =
       { model | powerups = model.powerups + 1, isAfterTrainingStarted = False }
   in
-    update TrainingQuizComplete new_model
+    update DayCompleted new_model
 
 
 power_down : Model -> ( Model, Cmd Msg )
@@ -87,9 +101,25 @@ power_down model =
       { model | powerups = model.powerups - 1, isAfterTrainingStarted = False }
   in
     if new_model.powerups == 0 then
-      update TrainingQuizComplete { new_model | powerups = 1 }
+      update DayCompleted { new_model | powerups = 1 }
     else
-      update TrainingQuizComplete new_model
+      update DayCompleted new_model
+
+
+day_completed : Model -> ( Model, Cmd Msg )
+day_completed model =
+  let
+    new_model =
+      { model
+        | isAfterTrainingStarted = False
+        , day = model.day + 1
+        , afterTrainingQuiz = { wasSuccessful = False, wasSuccessfulAnswered = False, wasEasy = False, wasEasyAnswered = True }
+      }
+  in
+    if (model.day % 21 == 0) then
+      update SaveModel { new_model | loops = new_model.loops + 1 }
+    else
+      update SaveModel new_model
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -138,14 +168,11 @@ update msg model =
       , Cmd.none
       )
 
-    TrainingQuizComplete ->
-      ( { model
-          | isAfterTrainingStarted = False
-          , day = model.day + 1
-          , afterTrainingQuiz = { wasSuccessful = False, wasSuccessfulAnswered = False, wasEasy = False, wasEasyAnswered = True }
-        }
-      , Cmd.none
-      )
+    DayCompleted ->
+      day_completed model
+
+    SaveModel ->
+      (model, setStorage model)
 
 
 
@@ -341,7 +368,7 @@ after_training_view_step3 model =
             ]
         ]
     , div
-        [ class "button-wrapper", onClick TrainingQuizComplete ]
+        [ class "button-wrapper", onClick DayCompleted ]
         [ button [ classList [ ( "button", True ), ( "-green", True ) ] ] [ text "Continue" ] ]
     ]
 
@@ -364,7 +391,7 @@ after_training_view_step4 model =
             [ class "button-wrapper", onClick PowerUp ]
             [ button [ classList [ ( "button", True ), ( "-green", True ) ] ] [ text "Yes" ] ]
         , div
-            [ class "button-wrapper", onClick TrainingQuizComplete ]
+            [ class "button-wrapper", onClick DayCompleted ]
             [ button [ classList [ ( "button", True ), ( "-red", True ) ] ] [ text "No" ] ]
         ]
     ]
@@ -388,7 +415,7 @@ after_training_view_step5 model =
             [ class "button-wrapper", onClick PowerDown ]
             [ button [ classList [ ( "button", True ), ( "-green", True ) ] ] [ text "Yes" ] ]
         , div
-            [ class "button-wrapper", onClick TrainingQuizComplete ]
+            [ class "button-wrapper", onClick DayCompleted ]
             [ button [ classList [ ( "button", True ), ( "-red", True ) ] ] [ text "No" ] ]
         ]
     ]
@@ -420,11 +447,63 @@ after_training_view model =
     ]
 
 
+stretching_day_view : Model -> Html Msg
+stretching_day_view model =
+  div
+    []
+    [ div
+        [ class "title" ]
+        [ text "100 Days Workout" ]
+    , div
+        [ class "card" ]
+        [ div
+            [ class "card__completed" ]
+            [ badge "✓" (toString model.day) "-purple" ]
+        , div
+            [ class "card__group" ]
+            [ div [ class "card__label" ] [ text "Next traning: " ]
+            , p [ class "card__text" ] [ text "Stretching day" ]
+            ]
+        ]
+    , div
+        [ class "button-wrapper", onClick DayCompleted ]
+        [ button [ classList [ ( "button", True ), ( "-green", True ) ] ] [ text "Continue" ] ]
+    ]
+
+
+resting_day_view : Model -> Html Msg
+resting_day_view model =
+  div
+    []
+    [ div
+        [ class "title" ]
+        [ text "100 Days Workout" ]
+    , div
+        [ class "card" ]
+        [ div
+            [ class "card__completed" ]
+            [ badge "✓" (toString model.day) "-purple" ]
+        , div
+            [ class "card__group" ]
+            [ div [ class "card__label" ] [ text "Next traning: " ]
+            , p [ class "card__text" ] [ text "Resting day. Don't do any exercise toady." ]
+            ]
+        ]
+    , div
+        [ class "button-wrapper", onClick DayCompleted ]
+        [ button [ classList [ ( "button", True ), ( "-green", True ) ] ] [ text "Continue" ] ]
+    ]
+
+
 view : Model -> Html Msg
 view model =
   if model.isTrainingStarted then
     training_view model
   else if model.isAfterTrainingStarted then
     after_training_view model
+  else if model.day % 6 == 0 then
+    resting_day_view model
+  else if model.day % 7 == 0 then
+    stretching_day_view model
   else
     main_view model

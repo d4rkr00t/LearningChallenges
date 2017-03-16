@@ -3,6 +3,32 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
+const isProd = process.env.NODE_ENV === "production";
+const elmLoaders = [];
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: "src/static/index.html",
+    inject: "body",
+    filename: "index.html"
+  }),
+
+  new CopyWebpackPlugin([{ from: "assets/", to: "assets/" }])
+];
+
+if (!isProd) {
+  // enable HMR globally
+  plugins.push(new webpack.HotModuleReplacementPlugin());
+  // prints more readable module names in the browser console on HMR updates
+  plugins.push(new webpack.NamedModulesPlugin());
+
+  elmLoaders.push("elm-hot-loader");
+}
+
+elmLoaders.push({
+  loader: "elm-webpack-loader",
+  options: { debug: !isProd }
+});
+
 module.exports = {
   entry: "./src/static/index.js",
   output: {
@@ -14,10 +40,10 @@ module.exports = {
     extensions: [".js", ".elm"]
   },
 
-  devtool: "cheap-eval-source-map",
+  devtool: !isProd ? "cheap-eval-source-map" : "",
 
   devServer: {
-    hot: true
+    hot: !isProd
   },
 
   module: {
@@ -25,15 +51,7 @@ module.exports = {
       {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
-        use: [
-          "elm-hot-loader",
-          {
-            loader: "elm-webpack-loader",
-            options: {
-              debug: true
-            }
-          }
-        ]
+        use: elmLoaders
       },
       {
         test: /\.css$/,
@@ -53,19 +71,5 @@ module.exports = {
     ]
   },
 
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "src/static/index.html",
-      inject: "body",
-      filename: "index.html"
-    }),
-
-    new webpack.HotModuleReplacementPlugin(),
-    // enable HMR globally
-
-    new webpack.NamedModulesPlugin(),
-    // prints more readable module names in the browser console on HMR updates
-
-    new CopyWebpackPlugin([{ from: "assets/" }])
-  ]
+  plugins
 };

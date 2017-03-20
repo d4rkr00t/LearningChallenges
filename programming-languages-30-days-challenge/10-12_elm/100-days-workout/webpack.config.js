@@ -33,7 +33,8 @@ module.exports = {
   entry: "./src/static/index.js",
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: isProd ? "/100-days-workout/" : "/"
   },
 
   resolve: {

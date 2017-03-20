@@ -85,28 +85,19 @@ type Msg
   | SaveModel
 
 
-power_up : Model -> ( Model, Cmd Msg )
-power_up model =
-  let
-    new_model =
-      { model | powerups = model.powerups + 1, isAfterTrainingStarted = False }
-  in
-    update DayCompleted new_model
-
-
-power_down : Model -> ( Model, Cmd Msg )
+power_down : Model -> Model
 power_down model =
   let
     new_model =
       { model | powerups = model.powerups - 1, isAfterTrainingStarted = False }
   in
     if new_model.powerups == 0 then
-      update DayCompleted { new_model | powerups = 1 }
+      { new_model | powerups = 1 }
     else
-      update DayCompleted new_model
+      new_model
 
 
-day_completed : Model -> ( Model, Cmd Msg )
+day_completed : Model -> Model
 day_completed model =
   let
     new_model =
@@ -117,59 +108,56 @@ day_completed model =
       }
   in
     if (model.day % 21 == 0) then
-      update SaveModel { new_model | loops = new_model.loops + 1 }
+      { new_model | loops = new_model.loops + 1 }
     else
-      update SaveModel new_model
+      new_model
+
+
+save_model : Model -> ( Model, Cmd Msg )
+save_model model =
+  update SaveModel model
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
   case msg of
     StartTraining ->
-      ( { model | isTrainingStarted = True, currentLoop = 1 }, Cmd.none )
+      save_model { model | isTrainingStarted = True, currentLoop = 1 }
 
     NextLoop ->
-      ( { model | currentLoop = model.currentLoop + 1 }, Cmd.none )
+      save_model { model | currentLoop = model.currentLoop + 1 }
 
     EndTraining ->
-      ( { model | isTrainingStarted = False, isAfterTrainingStarted = True }, Cmd.none )
+      save_model { model | isTrainingStarted = False, isAfterTrainingStarted = True }
 
     PowerUp ->
-      power_up model
+      save_model { model | powerups = model.powerups + 1, isAfterTrainingStarted = False }
 
     PowerDown ->
-      power_down model
+      save_model (power_down model)
 
     TrainingWasSuccessful ->
-      ( { model
-          | afterTrainingQuiz = { wasSuccessful = True, wasSuccessfulAnswered = True, wasEasy = False, wasEasyAnswered = False }
-        }
-      , Cmd.none
-      )
+      save_model { model
+        | afterTrainingQuiz = { wasSuccessful = True, wasSuccessfulAnswered = True, wasEasy = False, wasEasyAnswered = False }
+      }
 
     TrainingWasUnsuccessful ->
-      ( { model
-          | afterTrainingQuiz = { wasSuccessful = False, wasSuccessfulAnswered = True, wasEasy = False, wasEasyAnswered = False }
-        }
-      , Cmd.none
-      )
+      save_model { model
+        | afterTrainingQuiz = { wasSuccessful = False, wasSuccessfulAnswered = True, wasEasy = False, wasEasyAnswered = False }
+      }
 
     TrainingWasEasy ->
-      ( { model
-          | afterTrainingQuiz = { wasSuccessful = True, wasSuccessfulAnswered = True, wasEasy = True, wasEasyAnswered = True }
-        }
-      , Cmd.none
-      )
+      save_model { model
+        | afterTrainingQuiz = { wasSuccessful = True, wasSuccessfulAnswered = True, wasEasy = True, wasEasyAnswered = True }
+      }
 
     TrainingWasDificult ->
-      ( { model
-          | afterTrainingQuiz = { wasSuccessful = True, wasSuccessfulAnswered = True, wasEasy = False, wasEasyAnswered = True }
-        }
-      , Cmd.none
-      )
+      save_model { model
+        | afterTrainingQuiz = { wasSuccessful = True, wasSuccessfulAnswered = True, wasEasy = False, wasEasyAnswered = True }
+      }
 
     DayCompleted ->
-      day_completed model
+      save_model (day_completed model)
 
     SaveModel ->
       (model, setStorage model)

@@ -24,3 +24,8 @@ IO.puts hd list
 # IO.puts tl list
 
 # IO.puts {:ok, "hello"}
+{a, b, c} = {:hello, "world", 42}
+IO.puts a
+IO.puts b
+IO.puts c
+

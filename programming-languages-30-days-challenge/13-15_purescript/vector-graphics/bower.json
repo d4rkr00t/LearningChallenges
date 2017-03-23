@@ -1,5 +1,5 @@
 {
-  "name": "file-system",
+  "name": "vector-graphics",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -9,10 +9,7 @@
   "dependencies": {
     "purescript-prelude": "^2.5.0",
     "purescript-console": "^2.0.0",
-    "purescript-maybe": "^2.1.1",
-    "purescript-arrays": "^3.2.1",
-    "purescript-strings": "^2.1.0",
-    "purescript-foldable-traversable": "^2.2.0",
+    "purescript-globals": "^2.0.0",
     "purescript-math": "^2.0.0"
   },
   "devDependencies": {

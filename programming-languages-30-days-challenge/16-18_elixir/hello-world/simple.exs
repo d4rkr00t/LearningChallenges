@@ -16,14 +16,14 @@ IO.puts add.(1, 2)
 double = fn a -> add.(a, a) end
 IO.puts double.(2)
 
-# IO.puts ([1, 2, 3] ++ [4, 5, 6])
-# IO.puts ([1, true, 2, false, 3, true] -- [true, false])
+IO.inspect ([1, 2, 3] ++ [4, 5, 6])
+IO.inspect ([1, true, 2, false, 3, true] -- [true, false])
 
 list = [1, 2, 3]
-IO.puts hd list
-# IO.puts tl list
+IO.inspect hd list
+IO.inspect tl list
 
-# IO.puts {:ok, "hello"}
+IO.inspect {:ok, "hello"}
 {a, b, c} = {:hello, "world", 42}
 IO.puts a
 IO.puts b
@@ -38,8 +38,29 @@ case {1,2,3} do
         IO.puts "This clause would match any value"
 end
 
-x = 1
-case 10 do
-    ^x -> IO.puts "Won't match"
-    _  -> IO.puts "This clause would match any value"
-end
+# x = 1
+# case 10 do
+#     ^x -> IO.puts "Won't match"
+#     _  -> IO.puts "This clause would match any value"
+# end
+
+keywordsList = [{:a, 1}, {:b, 2}]
+IO.inspect keywordsList
+
+IO.inspect %{:a => 1, 2 => :b}
+n = 1
+IO.inspect %{n => :one}
+IO.inspect Map.get(%{:a => 1, 2 => :b}, :a)
+IO.inspect Map.put(%{:a => 1, 2 => :b}, :c, 3)
+IO.inspect Map.to_list(%{:a => 1, 2 => :b})
+
+users = [
+  john: %{name: "John", age: 27, languages: ["Erlang", "Ruby", "Elixir"]},
+  mary: %{name: "Mary", age: 29, languages: ["Elixir", "F#", "Clojure"]}
+]
+IO.puts users[:john].age
+users = put_in users[:john].age, 31
+IO.puts users[:john].age
+
+users = update_in users[:mary].languages, fn languages -> List.delete(languages, "Clojure") end
+IO.inspect users

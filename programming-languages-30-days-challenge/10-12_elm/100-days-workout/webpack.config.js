@@ -12,7 +12,7 @@ const plugins = [
     filename: "index.html"
   }),
 
-  new CopyWebpackPlugin([{ from: "assets/", to: "assets/" }])
+  new CopyWebpackPlugin([{ from: "./assets/", to: "./assets/" }])
 ];
 
 if (!isProd) {

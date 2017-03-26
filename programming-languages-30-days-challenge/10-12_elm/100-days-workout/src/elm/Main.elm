@@ -489,7 +489,7 @@ view model =
     training_view model
   else if model.isAfterTrainingStarted then
     after_training_view model
-  else if model.day % 6 == 0 then
+  else if (model.day - (model.day // 7) * 7) % 6 == 0 then
     resting_day_view model
   else if model.day % 7 == 0 then
     stretching_day_view model
